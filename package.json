@@ -1,0 +1,44 @@
+{
+  "name": "switch-ext-linux",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Linux machine's vitals, as a Switch extension.",
+  "license": "MIT",
+  "repository": "github:zachsents/switch-ext-linux",
+  "type": "module",
+  "scripts": {
+    "start": "bun src/main.ts",
+    "typecheck": "tsgo --noEmit",
+    "lint": "oxlint --type-aware --fix --fix-suggestions",
+    "format": "oxfmt --write .",
+    "fix": "bun run lint && bun run format",
+    "captions": "ui-captions src",
+    "check": "bun run typecheck && bun run captions && bun run fix"
+  },
+  "dependencies": {
+    "@effect/platform-bun": "4.1.4",
+    "@modelcontextprotocol/server": "^2.4.0",
+    "effect": "^4.1.5",
+    "switch-ext-kit": "github:zachsents/switch-ext-kit#e147a30"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.5",
+    "@typescript/native-preview": "^7.0.0-dev.20260707.2",
+    "oxfmt": "^0.80.0",
+    "oxlint": "^1.95.0",
+    "oxlint-tsgolint": "^7.0.2008",
+    "ultracite": "^8.3.1"
+  },
+  "extension": {
+    "name": "linux",
+    "main": "src/main.ts",
+    "heartbeat": 420000,
+    "needs": [
+      "linux"
+    ],
+    "every": true,
+    "widgets": [
+      "vitals"
+    ]
+  }
+}
