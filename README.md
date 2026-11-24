@@ -1,3 +1,5 @@
+**Moved to [zachsents/switch](https://github.com/zachsents/switch/tree/main/extensions/linux).** This repo is archived.
+
 # switch-ext-linux
 
 A Linux machine's vitals, as a Switch extension: CPU, load, memory and its pressure, swap, free disk
